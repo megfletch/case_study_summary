@@ -1,0 +1,38 @@
+---
+title: "Loading and Prepping CRF Summary Data"
+author: "Meghan Fletcher"
+date: "2/10/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE, message = FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+#Load libraries
+source(here("00-load-libraries.R"))
+```
+
+
+# Read in the data from Google Sheets
+```{r, results=FALSE, message = FALSE, warning = FALSE, class.source = 'fold-hide', warning = FALSE}
+case_study_summary <- read_sheet(ss = "https://docs.google.com/spreadsheets/d/10ZcIdYASKeE-GKs7zC37YC4gANjNgFNb2mhBLptgGyU/edit", 
+                           sheet = "Sheet1",
+                           range = "A2:P19",
+                           col_names = TRUE,
+                           na = c("NA","na","NAN","nan",""),
+                           guess_max = 10000,
+                           trim_ws = TRUE,
+                           col_types = "c"
+                           ) %>%
+  as_tibble() %>%
+  clean_names() 
+#%>% 
+  #add_column(case_study = "Aguion",
+  #           reference = seq(1:nrow(.)),
+  #           .after = "question_id") %>% 
+  #mutate(reference = str_c(case_study, reference))
+
+```
+
+
+

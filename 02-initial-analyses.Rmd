@@ -1,0 +1,70 @@
+---
+title: "Inital Summary Analyses (Barplots)"
+author: "Meghan Fletcher"
+date: "2/10/2022"
+output: 
+  html_document:
+    theme: flatly
+    code_folding: hide
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE, message = FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(here)
+library(tidyverse)
+library(ggplot2)
+library(RColorBrewer)
+library(janitor)
+library(googlesheets4)
+```
+
+# Load data
+
+```{r}
+case_study_summary <- read_sheet(ss = "https://docs.google.com/spreadsheets/d/10ZcIdYASKeE-GKs7zC37YC4gANjNgFNb2mhBLptgGyU/edit", 
+                           sheet = "Sheet1",
+                           range = "A2:Z19",
+                           col_names = TRUE,
+                           na = c("NA","na","NAN","nan",""),
+                           guess_max = 10000,
+                           trim_ws = TRUE,
+                           col_types = "c"
+                           ) %>%
+  as_tibble() %>%
+  clean_names() 
+```
+
+
+################################################################################################
+
+# Plot the case studies by highest ranking dimension
+
+
+## Make a table for the highest scoring dimensions and morst important dimensions
+
+```{r}
+
+```
+
+
+
+# Break it down by fishery location
+```{r}
+ggplot(case_study_summary, aes(x=highest_scoring_dimension)) +
+  geom_bar() +
+  facet_wrap(~fishery_location)
+```
+
+
+## Make table for highest scoring domains and most important doains
+
+### Graph domain information
+
+
+
+
+
+

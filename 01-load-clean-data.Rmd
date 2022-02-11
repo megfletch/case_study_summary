@@ -17,7 +17,7 @@ source(here("00-load-libraries.R"))
 ```{r, results=FALSE, message = FALSE, warning = FALSE, class.source = 'fold-hide', warning = FALSE}
 case_study_summary <- read_sheet(ss = "https://docs.google.com/spreadsheets/d/10ZcIdYASKeE-GKs7zC37YC4gANjNgFNb2mhBLptgGyU/edit", 
                            sheet = "Sheet1",
-                           range = "A2:P19",
+                           range = "A2:Z19",
                            col_names = TRUE,
                            na = c("NA","na","NAN","nan",""),
                            guess_max = 10000,

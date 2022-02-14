@@ -34,5 +34,12 @@ case_study_summary <- read_sheet(ss = "https://docs.google.com/spreadsheets/d/10
 
 ```
 
+# Save
+Save workspace image & csv to load with other scripts
+```{r}
 
+save(case_study_summary, file = here("data","summary_clean.Rdata"))
+case_study_summary %>% write_csv(here("data","summary_clean.csv"))
+
+```
 

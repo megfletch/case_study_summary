@@ -68,7 +68,7 @@ dimension_table %>%
 ggplot(case_study_summary, aes(x=highest_scoring_dimension)) +
   geom_bar() +
   facet_wrap(~fishery_scale_small_or_large) +
-  my_theme
+  theme_bw() + my_theme
 ```
 
 
@@ -120,7 +120,7 @@ ggplot(domain_table, aes(x=Domain, fill = Rank)) +
 ```
 
 
-### Graph domain information
+
 
 
 

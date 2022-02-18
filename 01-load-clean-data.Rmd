@@ -26,11 +26,7 @@ case_study_summary <- read_sheet(ss = "https://docs.google.com/spreadsheets/d/10
                            ) %>%
   as_tibble() %>%
   clean_names() 
-#%>% 
-  #add_column(case_study = "Aguion",
-  #           reference = seq(1:nrow(.)),
-  #           .after = "question_id") %>% 
-  #mutate(reference = str_c(case_study, reference))
+
 
 ```
 
